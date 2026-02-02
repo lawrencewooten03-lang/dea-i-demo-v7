@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEA I – Winner Screen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <div>
+        <div class="brand-title">DEA I <span class="muted">| Winner Screen</span></div>
+        <div class="brand-sub">The right decision. Every time.</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <a class="btn btn-ghost" href="index.html">Replay Demo</a>
+      <a class="btn btn-ghost" href="before_after.html">Before vs DEA I</a>
+      <a class="btn btn-primary" href="scale.html">Vision to Scale →</a>
+    </div>
+  </div>
+
+  <div class="winner">
+    <div class="winner-bg"></div>
+
+    <div class="winner-card">
+      <div class="winner-kicker">DEA I – Decision Enablement AI</div>
+
+      <div class="winner-hero">
+        <div class="halo"></div>
+        <img class="winner-robot" src="dea_i_robot.jpg" alt="DEA I Robot"/>
+      </div>
+
+      <h1 class="winner-title">The Right Decision. Every Time.</h1>
+      <p class="winner-sub">Smarter sourcing. Lower risk. Built‑in inclusion.</p>
+
+      <div class="winner-tiles">
+        <div class="tile tile-blue">
+          <div class="tile-label">VALUE</div>
+          <div class="tile-value">4–7% CPP Reduction</div>
+          <div class="tile-note">Volume leverage + rate cards + competition</div>
+        </div>
+
+        <div class="tile tile-yellow">
+          <div class="tile-label">RESILIENCE</div>
+          <div class="tile-value">Risk Reduced by Design</div>
+          <div class="tile-note">No monopoly • No surprises • No scramble</div>
+        </div>
+
+        <div class="tile tile-green">
+          <div class="tile-label">INCLUSION</div>
+          <div class="tile-value">Diverse Suppliers by Default</div>
+          <div class="tile-note">Embedded at intake — not later</div>
+        </div>
+      </div>
+
+      <div class="winner-confidence">
+        <div class="winner-confidence-head">
+          <div class="winner-confidence-label">Decision Confidence</div>
+          <div class="winner-confidence-value" id="finalConfidence">95%</div>
+        </div>
+        <div class="winner-confidence-meter">
+          <div class="winner-confidence-bar" id="finalBar"></div>
+        </div>
+        <div class="winner-confidence-foot">Explainable • Governed • Human‑verified</div>
+      </div>
+
+      <div class="winner-quote">
+        “DEA I turns Source‑to‑Pay into a system that learns — and makes good decisions unavoidable.”
+        <div class="muted small" style="margin-top:10px;">Direct Mail use case • Illustrative outputs only • No real supplier data</div>
+      </div>
+
+      <div class="winner-actions">
+        <a class="btn btn-secondary" href="recommendations.html">View Recommendations</a>
+        <a class="btn btn-primary" href="index.html">Replay Demo →</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animate confidence bar
+    const bar = document.getElementById("finalBar");
+    setTimeout(()=>{ bar.style.width = "95%"; }, 250);
+  </script>
+</body>
+</html>

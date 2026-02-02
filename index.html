@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEA I – Direct Mail Intelligence (Executive Demo)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Cinematic Intro Overlay -->
+  <div class="intro" id="intro">
+    <div class="intro-bg"></div>
+    <div class="intro-card">
+      <div class="intro-badge">EXECUTIVE DEMO</div>
+      <img class="intro-hero" src="dea_i_robot.jpg" alt="DEA I Robot"/>
+      <h1 class="intro-title">DEA I</h1>
+      <p class="intro-subtitle">Decision Enablement AI</p>
+      <p class="intro-tagline">Smarter Decisions. By Design. With Everyone in Mind.</p>
+
+      <div class="intro-actions">
+        <button class="btn btn-primary" id="btnStart">Start Demo</button>
+        <a class="btn btn-secondary" href="before_after.html">View Before vs DEA I →</a>
+      </div>
+
+      <div class="intro-foot">
+        <span class="muted small">Tip: Use → / ← to navigate • Press R to restart</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <div>
+        <div class="brand-title">DEA I <span class="muted">| Decision Enablement AI</span></div>
+        <div class="brand-sub">Direct Mail: From Spend Execution to Category Intelligence</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <label class="toggle">
+        <input id="autoplayToggle" type="checkbox" checked />
+        <span class="toggle-ui"></span>
+        <span class="toggle-text">Autoplay</span>
+      </label>
+
+      <a class="btn btn-ghost" href="before_after.html">Before vs DEA I</a>
+      <button class="btn btn-ghost" id="btnReset" title="Restart demo">Restart</button>
+      <a class="btn btn-primary" href="recommendations.html">Final Recommendations →</a>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="hero">
+        <img class="hero-img" src="dea_i_robot.jpg" alt="DEA I Robot" />
+        <div class="hero-copy">
+          <div class="hero-tag">Executive Walkthrough</div>
+          <div class="hero-headline">Show the intelligence <br/>at the intake moment.</div>
+          <div class="hero-foot">Explainable. Compliant. Human-verified.</div>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="kpi-label">Projected CPP Reduction</div>
+          <div class="kpi-value"><span data-count="7">0</span>%</div>
+          <div class="kpi-note">Estimated range: 4–7%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Incumbent Concentration</div>
+          <div class="kpi-value"><span data-count="72">0</span>%</div>
+          <div class="kpi-note">24-month award share</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Preferred Supplier Share</div>
+          <div class="kpi-value"><span data-count="78">0</span>%</div>
+          <div class="kpi-note">By volume</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Diverse Suppliers Identified</div>
+          <div class="kpi-value"><span data-count="3">0</span></div>
+          <div class="kpi-note">2 viable now + 1 phased</div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Judge Mode</div>
+        <div class="sidebar-card-body">
+          Use <b>Next</b> to control pacing. Autoplay runs the full story in ~2 minutes.
+          <div class="mini-actions">
+            <button class="btn btn-secondary" id="btnNext">Next Step</button>
+            <button class="btn btn-ghost" id="btnSkip">Skip to Summary</button>
+          </div>
+        </div>
+      </div>
+
+      <a class="sidebar-link" href="scale.html">Vision to Scale →</a>
+    </aside>
+
+    <main class="main">
+      <div class="progress">
+        <div class="progress-label">Demo Progress</div>
+        <div class="progress-track">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="timeline" id="timeline"></div>
+
+        <div class="workspace">
+          <div class="workspace-head">
+            <div>
+              <div class="workspace-title" id="stepTitle">Loading…</div>
+              <div class="workspace-sub" id="stepSub"></div>
+            </div>
+            <div class="pill" id="stepPill">Direct Mail</div>
+          </div>
+
+          <div class="workspace-grid">
+            <div class="card" id="panelLeft">
+              <div class="card-title">What DEA I is doing</div>
+              <div class="terminal" id="terminal">
+                <div class="terminal-row"><span class="prompt">DEA I</span><span class="cursor">▌</span></div>
+              </div>
+              <div class="card-footer">
+                <span class="muted">Explainable AI outputs • Human-reviewed</span>
+              </div>
+            </div>
+
+            <div class="card" id="panelRight">
+              <div class="card-title-row">
+                <div class="card-title">Insights surfaced</div>
+                <div class="confidence" title="DEA I Confidence Score (illustrative)">
+                  <div class="confidence-label">Confidence</div>
+                  <div class="confidence-meter">
+                    <div class="confidence-bar" id="confidenceBar"></div>
+                  </div>
+                  <div class="confidence-value" id="confidenceValue">--%</div>
+                </div>
+              </div>
+              <div class="insights" id="insights"></div>
+              <div class="card-footer">
+                <span class="muted">Signals → Actions → Value</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="btn btn-secondary" id="btnBack">Back</button>
+            <button class="btn btn-primary" id="btnNextMain">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
