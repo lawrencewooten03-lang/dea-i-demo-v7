@@ -1,4 +1,15 @@
 
+/* --- Synchrony Brand Tokens (authoritative) --- */
+:root{
+  --syf-blue:#0057B8;
+  --syf-gold:#FFD100;
+
+  /* Alias used across demo */
+  --blue: var(--syf-blue);
+  --yellow: var(--syf-gold);
+}
+
+
 :root{
   --bg: #0b0e14;
   --panel: rgba(255,255,255,.06);
@@ -588,3 +599,89 @@ body{
   flex-wrap:wrap;
   margin-top: 14px;
 }
+
+
+/* --- Glow Animation (Mascot spotlight) --- */
+@keyframes syfGlow {
+  0%,100% { filter: drop-shadow(0 0 10px rgba(0,87,184,.35)) drop-shadow(0 0 18px rgba(255,209,0,.18)); }
+  50%     { filter: drop-shadow(0 0 18px rgba(0,87,184,.55)) drop-shadow(0 0 30px rgba(255,209,0,.28)); }
+}
+.glow{
+  animation: syfGlow 2.6s ease-in-out infinite;
+}
+
+/* Apply glow to key mascot placements */
+.hero-img, .intro-hero, .winner-robot, .page-hero-img{
+  animation: syfGlow 2.6s ease-in-out infinite;
+}
+
+/* --- Loading Splash (pre-intro) --- */
+.splash{
+  position:fixed; inset:0; z-index:1000;
+  display:flex; align-items:center; justify-content:center;
+  background:
+    radial-gradient(900px 520px at 20% 8%, rgba(0,87,184,.35), transparent 60%),
+    radial-gradient(900px 520px at 85% 18%, rgba(255,209,0,.22), transparent 60%),
+    linear-gradient(180deg, rgba(7,9,16,.98), rgba(11,14,20,.98));
+}
+.splash-card{
+  width:min(720px, 92vw);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  border-radius: 26px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 30px 120px rgba(0,0,0,.6);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.splash-card::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background: radial-gradient(650px 220px at 20% 0%, rgba(0,87,184,.25), transparent 60%),
+              radial-gradient(650px 220px at 80% 20%, rgba(255,209,0,.18), transparent 60%);
+  opacity:.9; pointer-events:none;
+}
+.splash-hero{
+  position:relative;
+  width: 140px; height:140px;
+  border-radius: 24px;
+  object-fit: cover;
+  margin: 6px auto 10px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+}
+.splash-title{
+  position:relative;
+  margin: 6px 0 0;
+  font-size: 34px;
+  letter-spacing: -0.8px;
+}
+.splash-sub{
+  position:relative;
+  margin: 6px auto 14px;
+  max-width: 560px;
+  color: rgba(232,237,245,.72);
+  line-height:1.35;
+}
+.splash-bar{
+  position:relative;
+  height: 10px;
+  border-radius: 999px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.10);
+}
+.splash-bar > div{
+  height:100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(0,87,184,.95), rgba(255,209,0,.95));
+  animation: splashFill 1.2s ease-out forwards;
+}
+@keyframes splashFill{to{width:100%;}}
+.splash-foot{
+  position:relative;
+  margin-top: 10px;
+  font-size: 11px;
+  color: rgba(232,237,245,.62);
+}
+.splash.hide{opacity:0; transition: opacity .35s ease;}

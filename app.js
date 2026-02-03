@@ -374,3 +374,14 @@ bindControls();
 
 // Keep demo paused behind intro until user starts
 goTo(0, true);
+
+
+function hideSplash(){
+  const splash = document.getElementById("splash");
+  if(!splash) return;
+  splash.classList.add("hide");
+  setTimeout(()=> splash.remove(), 380);
+}
+
+// Show splash briefly, then allow intro
+setTimeout(()=> hideSplash(), 1350);
